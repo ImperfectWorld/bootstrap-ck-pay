@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>百度传课支付管理系统</title>
+    <link rel="shortcut icon" type="/image/x-icon" href="favicon.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="navbar-wrapper api-navbar-wrapper">
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> <a class="navbar-brand" href="javascript:;"> 百度传课-支付系统后台管理系统 </a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" style="padding-top:3px">
+                <ul class="nav nav-bar nav-pills navbar-right" style="margin-left: 50px;">
+                    <!--<li class=""><a href="#">登录</a></li>-->
+                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi，admin！ <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人中心</a></li>
+                            <li><a href="#">返回平台首页</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="api-breadcrumb breadcrumb">当前位置：
+                <li><a href="#">首页</a></li> &gt;
+                <li><a href="#">后台用户管理</a></li> &gt;
+                <li class="active">角色管理</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="nav-vertical">
+                <ul class="accordion">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+                    <li><a href="#" class="active"><i class="glyphicon glyphicon-education"></i>角色管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i>菜单管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i>用户操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.sidebar -->
+        <div class="col-md-10 main">
+            <div class="row">
+                <div class="col-md-7">
+                    <form class="form-inline mb20">
+                        <div class="form-group">
+                            <input type="text" placeholder="角色名称" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="角色权限" class="form-control">
+                        </div>
+                        <a href="#" class="btn btn-primary">查询</a>
+                    </form>
+                </div>
+                <div class="col-md-5">
+                    <div class="pull-right">
+                        <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#modalAdd"><i class="small glyphicon glyphicon-plus"></i> 新增角色</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- 带边框 -->
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>角色ID</th>
+                                <th>角色名</th>
+                                <th>角色权限</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>财务-信息录入</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEdit">编辑</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalDel" class="text-danger">删除</a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.main -->
+    </div>
+    
+
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="copyright fr">© 2015 百度传课 版权所有</div>
+        <div class="link"><a href="#">帮助中心</a> | <a href="#">使用统计</a></div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal）modalAdd -->
+<div class="modal fade bs-example-modal-md" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新增角色
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <p class="bg-danger text-danger">请输入正确角色名</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="username"><i class="i-required">*</i>用户名</label>
+                        <input type="text" class="form-control" id="username" placeholder="请输入角色名" required>
+                    </div> 
+                    <div class="form-group">
+                        <label for="userpassword"><i class="i-required">*</i>分配权限</label>
+                        <div class="authorization-wrap">
+                            <ul>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                    </div>                                    
+                                </li>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                        <i class="glyphicon glyphicon-menu-down"></i>
+                                    </div>
+                                    <ul>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                        <i class="glyphicon glyphicon-menu-down"></i>
+                                    </div>
+                                    <ul class="li-item-list">
+                                        <li>
+                                            <div class="li-item-head">
+                                                <label><input type="checkbox"> 2追溯申请</label>
+                                                <i class="glyphicon glyphicon-menu-down"></i>
+                                            </div>
+                                            <ul>
+                                                <li><label><input type="checkbox"> 3追溯申请</label></li>
+                                                <li><label><input type="checkbox"> 3追溯申请</label></li>
+                                                <li><label><input type="checkbox"> 3追溯申请</label></li>
+                                            </ul>
+                                        </li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.authorization-wrap -->
+                    </div>                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- 模态框（Modal）modalEdit -->
+<div class="modal fade bs-example-modal-md" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    编辑角色
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <p class="bg-danger text-danger">请输入正确角色名</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="username"><i class="i-required">*</i>用户名</label>
+                        <input type="text" class="form-control" id="username" placeholder="张三" disabled>
+                    </div> 
+                    <div class="form-group">
+                        <label for="userpassword"><i class="i-required">*</i>分配权限</label>
+                        <div class="authorization-wrap">
+                            <ul>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                    </div>                                    
+                                </li>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                        <i class="glyphicon glyphicon-menu-down"></i>
+                                    </div>
+                                    <ul>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="li-item-head">
+                                        <label><input type="checkbox"> 1追溯申请</label>
+                                        <i class="glyphicon glyphicon-menu-down"></i>
+                                    </div>
+                                    <ul class="li-item-list">
+                                        <li>
+                                            <div class="li-item-head">
+                                                <label><input type="checkbox"> 2追溯申请</label>
+                                                <i class="glyphicon glyphicon-menu-down"></i>
+                                            </div>
+                                            <ul>
+                                                <li><label><input type="checkbox"> 3追溯申请</label></li>
+                                                <li><label><input type="checkbox"> 3追溯申请</label></li>
+                                                <li><label><input type="checkbox"> 3追溯申请</label></li>
+                                            </ul>
+                                        </li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                        <li><label><input type="checkbox"> 2追溯申请</label></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.authorization-wrap -->
+                    </div>                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- 模态框（Modal）modalDel -->
+<div class="modal fade bs-example-modal-sm" id="modalDel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    删除角色
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+                <h5 class="text-danger fz20">您确定要删除该角色吗？</h5>
+                <p class="text-muted">删除后该用户对应的角色和权限自动失效.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+<div class="modal-dialog-intro" style="display:none;">
+    <div class="text-success">
+        <i class="glyphicon glyphicon-ok-sign"></i>
+        <span>操作成功</span>
+    </div>
+</div>
+
+
+</body>
+</html>

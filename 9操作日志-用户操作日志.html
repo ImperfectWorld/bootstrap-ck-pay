@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>百度传课支付管理系统</title>
+    <link rel="shortcut icon" type="/image/x-icon" href="favicon.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="navbar-wrapper api-navbar-wrapper">
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> <a class="navbar-brand" href="javascript:;"> 百度传课-支付系统后台管理系统 </a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" style="padding-top:3px">
+                <ul class="nav nav-bar nav-pills navbar-right" style="margin-left: 50px;">
+                    <!--<li class=""><a href="#">登录</a></li>-->
+                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi，admin！ <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人中心</a></li>
+                            <li><a href="#">返回平台首页</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="api-breadcrumb breadcrumb">当前位置：
+                <li><a href="#">首页</a></li> &gt;
+                <li><a href="#">后台用户管理</a></li> &gt;
+                <li class="active">用户操作日志</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="nav-vertical">
+                <ul class="accordion">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-education"></i>角色管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i>菜单管理</a></li>
+                    <li><a href="#" class="active"><i class="glyphicon glyphicon-list-alt"></i>用户操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.sidebar -->
+        <div class="col-md-10 main">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline mb20">
+                        <div class="form-group">
+                            <input type="text" placeholder="用户ID" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control">
+                            至
+                            <input type="date" class="form-control">
+                        </div>
+                        <a href="#" class="btn btn-primary">查询</a>
+                    </form>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- 带边框 -->
+                    <table class="table table-bordered table-hover">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col width="51.16525%">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>用户ID</th>
+                                <th>操作人</th>
+                                <th>操作日期</th>
+                                <th>操作地址</th>
+                                <th>操作状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>2015.12.10 18:30</td>
+                                <td><div>http://erp.baidu.com:8001/portal/me.html?resAppId=10001&resType=EXT_PAGE&resId=1&t=1451877071354</div></td>
+                                <td>
+                                    提交
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>2015.12.10 18:30</td>
+                                <td><div>http://erp.baidu.com:8001/portal/me.html</div></td>
+                                <td>
+                                    查询
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>2015.12.10 18:30</td>
+                                <td><div>http://erp.baidu.com:8001/portal/me.html</div></td>
+                                <td>
+                                    审批
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>2015.12.10 18:30</td>
+                                <td><div>http://erp.baidu.com:8000</div></td>
+                                <td>
+                                    提交
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>91202901</td>
+                                <td>张三</td>
+                                <td>2015.12.10 18:30</td>
+                                <td><div>http://erp.baidu.com:8001/portal/me.html</div></td>
+                                <td>
+                                    提交
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.main -->
+    </div>
+    
+
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="copyright fr">© 2015 百度传课 版权所有</div>
+        <div class="link"><a href="#">帮助中心</a> | <a href="#">使用统计</a></div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    提示
+                </h4>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-danger">作废后的接口将不可恢复，确定作废吗？</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+<div class="modal-dialog-intro" style="display:none;">
+    <div class="text-success">
+        <i class="glyphicon glyphicon-ok-sign"></i>
+        <span>注册接口成功</span>
+    </div>
+</div>
+
+
+</body>
+</html>
