@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>百度传课支付管理系统</title>
+    <link rel="shortcut icon" type="/image/x-icon" href="favicon.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="navbar-wrapper api-navbar-wrapper">
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> <a class="navbar-brand" href="javascript:;"> 百度传课-支付系统后台管理系统 </a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" style="padding-top:3px">
+                <ul class="nav nav-bar nav-pills navbar-right" style="margin-left: 50px;">
+                    <!--<li class=""><a href="#">登录</a></li>-->
+                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi，admin！ <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人中心</a></li>
+                            <li><a href="#">返回平台首页</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="api-breadcrumb breadcrumb">当前位置：
+                <li><a href="#">首页</a></li> &gt;
+                <li><a href="#">退款管理</a></li> &gt;
+                <li><a href="#">业务待审核</a></li> &gt;
+                <li class="active">退款详情</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="nav-vertical mb20">
+                <ul class="accordion">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i>帐户管理</a></li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-education"></i>交易查询 <i class="glyphicon glyphicon-menu-up"></i></a>
+                        <ul>
+                            <li><a href="#">充值记录</a></li>
+                            <li><a href="#">提现记录</a></li>
+                            <li><a href="#" class="active">退款记录</a></li>
+                            <li><a href="#">扣款记录</a></li>
+                            <li>
+                                <a href="#">交易流水<i class="glyphicon glyphicon-menu-up"></i></a>
+                                <ul>
+                                    <li><a href="#">机构收支明细</a></li>
+                                    <li><a href="#">对公帐户流水</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-usd"></i>提现管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务审核</a></li>
+                            <li><a href="#">财务受理</a></li>
+                            <li><a href="#">财务提交</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i>退款管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务待审核</a></li>
+                            <li><a href="#">业务已审核</a></li>
+                            <li><a href="#">财务待受理</a></li>
+                            <li><a href="#">财务已受理</a></li>
+                            <li><a href="#">待返回退款结果</a></li>
+                            <li><a href="#">已返回退款结果</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-option-vertical"></i>追溯管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-bold"></i>返还管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-retweet"></i>清结算管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i>后台用户管理</a></li>
+                    <li><a href="#" class="active"><i class="glyphicon glyphicon-list-alt"></i>操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.sidebar -->
+
+        <div class="col-md-10 main">
+            <p><a>&lt;&lt;返回</a></p>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- 带边框 -->
+                    <table class="table table-bordered table-hover">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>流水号</th>
+                            <th>用户Email</th>
+                            <th>退款金额(元)</th>
+                            <th>退款申请时间</th>
+                            <th>订单号</th>
+                            <th>原支付单号</th>
+                            <th>原支付类型</th>
+                            <th>退款状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>000000</td>
+                            <td>baidu01@baidu.com</td>
+                            <td>100.00</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>2015.12.10 18:25</td>
+                            <td>111111</td>
+                            <td>支付宝</td>
+                            <td>已成功</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                &nbsp;&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modalReject" class="text-danger">拒绝</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>000001</td>
+                            <td>baidu01@baidu.com</td>
+                            <td>100.00</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>2015.12.10 18:25</td>
+                            <td>111111</td>
+                            <td>支付宝</td>
+                            <td>已成功</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                &nbsp;&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modalReject" class="text-danger">拒绝</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>000002</td>
+                            <td>baidu01@baidu.com</td>
+                            <td>100.00</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>2015.12.10 18:25</td>
+                            <td>111111</td>
+                            <td>支付宝</td>
+                            <td>已成功</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                &nbsp;&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modalReject" class="text-danger">拒绝</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>000003</td>
+                            <td>baidu01@baidu.com</td>
+                            <td>100.00</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>2015.12.10 18:25</td>
+                            <td>111111</td>
+                            <td>支付宝</td>
+                            <td>已成功</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                &nbsp;&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modalReject" class="text-danger">拒绝</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>000004</td>
+                            <td>baidu01@baidu.com</td>
+                            <td>100.00</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>2015.12.10 18:25</td>
+                            <td>111111</td>
+                            <td>支付宝</td>
+                            <td>已成功</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                &nbsp;&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modalReject" class="text-danger">拒绝</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>000005</td>
+                            <td>baidu01@baidu.com</td>
+                            <td>100.00</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>2015.12.10 18:25</td>
+                            <td>111111</td>
+                            <td>支付宝</td>
+                            <td>已成功</td>
+                            <td>
+                                <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                &nbsp;&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modalReject" class="text-danger">拒绝</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        <!-- /.main -->
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="copyright fr">© 2015 百度传课 版权所有</div>
+        <div class="link"><a href="#">帮助中心</a> | <a href="#">使用统计</a></div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal）modalInfo -->
+<div class="modal fade bs-example-modal-md" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    退款详情
+                </h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="dialog-txxq-detail">
+                    <dl>
+                        <dt>流水号</dt>
+                        <dd>222222</dd>
+                    </dl>
+                    <dl>
+                        <dt>用户ID</dt>
+                        <dd>1221122</dd>
+                    </dl>
+                    <dl>
+                        <dt>用户Email</dt>
+                        <dd>baidu0101@baidu.com</dd>
+                    </dl>
+                    <dl>
+                        <dt>退款金额(元)</dt>
+                        <dd>100</dd>
+                    </dl>
+                    <dl>
+                        <dt>退款流水号</dt>
+                        <dd>1234567</dd>
+                    </dl>
+                    <dl>
+                        <dt>退款申请时间</dt>
+                        <dd>2015.12.10  18:25</dd>
+                    </dl>
+                    <dl>
+                        <dt>订单号</dt>
+                        <dd>123445567778</dd>
+                    </dl>
+                    <dl>
+                        <dt>原支付单号</dt>
+                        <dd>22222222</dd>
+                    </dl>
+                    <dl>
+                        <dt>原支付类型</dt>
+                        <dd>支付宝</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" disabled>
+                    业务审核中
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<!-- 模态框（Modal）modalAccept -->
+<div class="modal fade bs-example-modal-sm" id="modalAccept" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    审核通过
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+                <h5 class="text-danger fz20">确定通过全部申请？</h5>
+                <p class="text-muted">提交后交由财务进行受理</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+
+
+<!-- 模态框（Modal）modalReject -->
+<div class="modal fade bs-example-modal-md" id="modalReject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="">
+                    审核拒绝
+                </h4>
+            </div>
+            <div class="modal-body text-left">
+                拒绝原因
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+<div class="modal-dialog-intro" style="display:block;">
+    <div class="text-success">
+        <i class="glyphicon glyphicon-ok-sign"></i>
+        <span>退款申请已拒绝</span>
+    </div>
+</div>
+
+
+</body>
+</html>
