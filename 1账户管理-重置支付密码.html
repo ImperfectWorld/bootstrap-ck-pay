@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>百度传课支付管理系统</title>
+    <link rel="shortcut icon" type="/image/x-icon" href="favicon.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="navbar-wrapper api-navbar-wrapper">
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> <a class="navbar-brand" href="javascript:;"> 百度传课-支付系统后台管理系统 </a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" style="padding-top:3px">
+                <ul class="nav nav-bar nav-pills navbar-right" style="margin-left: 50px;">
+                    <!--<li class=""><a href="#">登录</a></li>-->
+                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi，admin！ <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人中心</a></li>
+                            <li><a href="#">返回平台首页</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="api-breadcrumb breadcrumb">当前位置：
+                <li><a href="#">首页</a></li> &gt;
+                <li><a href="#">账户管理</a></li> &gt;
+                <li><a href="#">重置支付密码</a></li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="nav-vertical mb20">
+                <ul class="accordion">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i>帐户管理 <i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">账户查询</a></li>
+                            <li><a href="#">账户冻结</a></li>
+                            <li><a href="#">账户冻结审核(部门)</a></li>
+                            <li><a href="#">账户解冻</a></li>
+                            <li><a href="#">账户解冻审核(部门)</a></li>
+                            <li><a href="#">账户解冻审核(财务)</a></li>
+                            <li><a href="#">重置支付密码</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-education"></i>交易查询 <i class="glyphicon glyphicon-menu-up"></i></a>
+                        <ul>
+                            <li><a href="#">充值记录</a></li>
+                            <li><a href="#">提现记录</a></li>
+                            <li><a href="#" class="active">退款记录</a></li>
+                            <li><a href="#">扣款记录</a></li>
+                            <li>
+                                <a href="#">交易流水<i class="glyphicon glyphicon-menu-up"></i></a>
+                                <ul>
+                                    <li><a href="#">机构收支明细</a></li>
+                                    <li><a href="#">对公帐户流水</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-usd"></i>提现管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务审核</a></li>
+                            <li><a href="#">财务受理</a></li>
+                            <li><a href="#">财务提交</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i>退款管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务待审核</a></li>
+                            <li><a href="#">业务已审核</a></li>
+                            <li><a href="#">财务待受理</a></li>
+                            <li><a href="#">财务已受理</a></li>
+                            <li><a href="#">待返回退款结果</a></li>
+                            <li><a href="#">已返回退款结果</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-option-vertical"></i>追溯管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-bold"></i>返还管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-retweet"></i>清结算管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i>后台用户管理</a></li>
+                    <li><a href="#" class="active"><i class="glyphicon glyphicon-list-alt"></i>操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.sidebar -->
+
+        <div class="col-md-10 main">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-inline mb20">
+                            <div class="form-group mr20" style="width:320px">
+                                KK号
+                                <input type="text" class="form-control" value="" />
+                            </div>
+                            <div class="form-group mr20" style="width:320px">
+                                用户Email
+                                <input type="email" class="form-control" value="" />
+                            </div>
+                            <div class="form-group mr20">
+                                账户状态
+                                <select class="ck-pay-select">
+                                    <option value="全部">全部</option>
+                                    <option value="全部">正常</option>
+                                    <option value="全部">已冻结</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-inline mb20">
+                            <a href="#" class="btn btn-default">重置</a>
+                            <a href="#" class="btn btn-primary">查询</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    单位：分
+                    <!-- 带边框 -->
+                    <form action="#" class="form-inline" style="margin-bottom: 20px">
+                        <table class="table table-bordered table-hover">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>
+                                    <label>
+                                        <input type="checkbox">
+                                    </label>
+                                </th>
+                                <th>ID</th>
+                                <th>Email</th>
+                                <th>账户名称</th>
+                                <th>可提现金额</th>
+                                <th>充值金额</th>
+                                <th>总余额</th>
+                                <th>未到账金额</th>
+                                <th>账户状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>000000</td>
+                                <td>baidu01@baidu.com</td>
+                                <td>100.00</td>
+                                <td>0</td>
+                                <td>100</td>
+                                <td>111111</td>
+                                <td>123</td>
+                                <td>冻结</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalAccept" class="text-danger">重置支付密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>000001</td>
+                                <td>baidu01@baidu.com</td>
+                                <td>100.00</td>
+                                <td>0</td>
+                                <td>100</td>
+                                <td>111111</td>
+                                <td>123</td>
+                                <td>冻结</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalAccept" class="text-danger">重置支付密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>000002</td>
+                                <td>baidu01@baidu.com</td>
+                                <td>100.00</td>
+                                <td>0</td>
+                                <td>100</td>
+                                <td>111111</td>
+                                <td>123</td>
+                                <td>冻结</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalAccept" class="text-danger">重置支付密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>000003</td>
+                                <td>baidu01@baidu.com</td>
+                                <td>100.00</td>
+                                <td>0</td>
+                                <td>100</td>
+                                <td>111111</td>
+                                <td>123</td>
+                                <td>冻结</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalAccept" class="text-danger">重置支付密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>000004</td>
+                                <td>baidu01@baidu.com</td>
+                                <td>100.00</td>
+                                <td>0</td>
+                                <td>100</td>
+                                <td>111111</td>
+                                <td>123</td>
+                                <td>冻结</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalAccept" class="text-danger">重置支付密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>000005</td>
+                                <td>baidu01@baidu.com</td>
+                                <td>100.00</td>
+                                <td>0</td>
+                                <td>100</td>
+                                <td>111111</td>
+                                <td>123</td>
+                                <td>冻结</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalInfo">详情</a>
+                                    &nbsp;&nbsp;
+                                    <a href="#" data-toggle="modal" data-target="#modalAccept" class="text-danger">重置支付密码</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-info">
+                            批量重置
+                        </button>
+                    </form>
+
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        <!-- /.main -->
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="copyright fr">© 2015 百度传课 版权所有</div>
+        <div class="link"><a href="#">帮助中心</a> | <a href="#">使用统计</a></div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal）modalInfo -->
+
+<!-- 模态框（Modal）modalAccept -->
+<div class="modal fade bs-example-modal-sm" id="modalAccept" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    重置支付密码
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+                <h5 class="text-danger fz20">确认重置该账户的支付密码？</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<div class="modal-dialog-intro" style="display:block; width: 600px;">
+    <div class="text-success">
+        <h2>已随机生成新的支付密码，XXXXXX</h2>
+        <h4>请提示用户立即更换密码！</h4>
+    </div>
+    <button type="button" class="btn btn-primary">
+        确定
+    </button>
+</div>
+
+</body>
+</html>
