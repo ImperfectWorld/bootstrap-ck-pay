@@ -126,10 +126,20 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    全部冻结申请
                     <!-- 带边框 -->
-                    <form action="#" class="form-inline" style="margin-bottom: 20px">
-                        <table class="table table-bordered table-hover">
+                    <form action="#" class="form-inline">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">全选
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-info">
+                            通过
+                        </button>
+                        <button type="submit" class="btn btn-info">
+                            拒绝
+                        </button>
+                        <table class="table table-bordered table-hover" style="margin-top: 10px">
                             <colgroup>
                                 <col>
                                 <col>
@@ -163,11 +173,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="">
-                                        </label>
-                                    </div>
+
                                 </td>
                                 <td>000000</td>
                                 <td>baidu01@baidu.com</td>
@@ -307,12 +313,7 @@
                             </tr>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-info">
-                            批量通过
-                        </button>
-                        <button type="submit" class="btn btn-info">
-                            批量拒绝
-                        </button>
+
                     </form>
 
                     <nav>
@@ -417,10 +418,6 @@
                     <span class="mr20">
                         <strong>冻结申请人:</strong>
                         <strong>XXX</strong>
-                    </span>
-                    <span class="mr20">
-                        <strong>冻结原因：</strong>
-                        <strong>XXXXXXXXXX</strong>
                     </span>
                 </div>
             </div>
