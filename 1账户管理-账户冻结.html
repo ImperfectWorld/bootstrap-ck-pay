@@ -156,10 +156,15 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    单位：分
                     <!-- 带边框 -->
-                    <form action="#" class="form-inline"  style="margin-bottom: 20px">
-                        <table class="table table-bordered table-hover">
+                    <form action="#" class="form-inline">
+                        <label>
+                            <input type="checkbox">全选
+                        </label>
+                        <button type="submit" class="btn btn-info">
+                            冻结
+                        </button>
+                        <table class="table table-bordered table-hover" style="margin-top: 10px">
                             <colgroup>
                                 <col>
                                 <col>
@@ -175,9 +180,7 @@
                             <thead>
                             <tr>
                                 <th>
-                                    <label>
-                                        <input type="checkbox">
-                                    </label>
+
                                 </th>
                                 <th>ID</th>
                                 <th>Email</th>
@@ -324,12 +327,7 @@
                             </tr>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-info">
-                            批量通过
-                        </button>
-                        <button type="submit" class="btn btn-info">
-                            批量拒绝
-                        </button>
+
                     </form>
 
                     <nav>
@@ -362,6 +360,77 @@
 
 
 <!-- 模态框（Modal）modalInfo -->
+<div class="modal fade bs-example-modal-md" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    账户详情
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="10%">ID</th>
+                            <th width="11%">KK号</th>
+                            <th width="">用户Email</th>
+                            <th width="">账户名称</th>
+                            <th width="10%">可提现金额</th>
+                            <th width="10%">充值金额</th>
+                            <th width="10%">总余额</th>
+                            <th width="10%">未到账金额</th>
+                            <th width="10%">帐户状态</th>
+                        </tr>
+                        <tr>
+                            <td>00000</td>
+                            <td>000000</td>
+                            <td>baidu0101@baidu.com</td>
+                            <td>XXXXX</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>正常</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="dialog-txxq-detail">
+                    <dl>
+                        <dt>收款银行</dt>
+                        <dd>招商银行</dd>
+                    </dl>
+                    <dl>
+                        <dt>开户地及支行</dt>
+                        <dd>北京, 招商银行</dd>
+                    </dl>
+                    <dl>
+                        <dt>收款帐号</dt>
+                        <dd>99w898993894838989</dd>
+                    </dl>
+                    <dl>
+                        <dt>手机号码：</dt>
+                        <dd>13901234567</dd>
+                    </dl>
+                    <dl>
+                        <dt>性别：</dt>
+                        <dd>女</dd>
+                    </dl>
+                    <dl>
+                        <dt>注册时间：</dt>
+                        <dd>2015.12.10  18:25</dd>
+                    </dl>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 <!-- 模态框（Modal）modalAccept -->
 <div class="modal fade bs-example-modal-sm" id="modalAccept" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
