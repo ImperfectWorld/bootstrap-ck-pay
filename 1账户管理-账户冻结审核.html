@@ -133,10 +133,10 @@
                                 <input type="checkbox" value="">全选
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-info">
+                        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#modalAccept">
                             通过
                         </button>
-                        <button type="submit" class="btn btn-info">
+                        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#modalReject">
                             拒绝
                         </button>
                         <table class="table table-bordered table-hover" style="margin-top: 10px">
@@ -154,11 +154,7 @@
                             </colgroup>
                             <thead>
                             <tr>
-                                <th>
-                                    <label>
-                                        <input type="checkbox">
-                                    </label>
-                                </th>
+                                <th></th>
                                 <th>ID</th>
                                 <th>Email</th>
                                 <th>账户名称</th>
@@ -173,7 +169,11 @@
                             <tbody>
                             <tr>
                                 <td>
-
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                        </label>
+                                    </div>
                                 </td>
                                 <td>000000</td>
                                 <td>baidu01@baidu.com</td>
@@ -468,7 +468,8 @@
                 </h4>
             </div>
             <div class="modal-body text-left">
-                拒绝原因
+                拒绝原因（非必填项)
+                <input type="text"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">
