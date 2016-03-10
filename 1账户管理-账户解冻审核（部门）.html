@@ -155,10 +155,10 @@
                                 <input type="checkbox" value="">全选
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#modalAccept">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalAccept">
                             通过
                         </button>
-                        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#modalReject">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalReject">
                             拒绝
                         </button>
                         <table class="table table-bordered table-hover" style="margin-top: 10px">
@@ -496,7 +496,7 @@
             </div>
             <div class="modal-body text-left">
                 拒绝原因（非必填项） <br/>
-                <input type="text"/>
+                <input type="text" style="width: 268px;"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">
@@ -511,16 +511,16 @@
 </div><!-- /.modal -->
 
 
-<div class="modal-dialog-intro" style="display:block; width: 500px;">
+<div class="modal-dialog-intro" style="display:none; width: 500px;">
     <div class="text-success">
         <i class="glyphicon glyphicon-ok-sign"></i>
-        <p>解冻申请已提交至财务审核</p>
+        <span>解冻申请已提交至财务审核</span>
     </div>
 </div>
 
-<div class="modal-dialog-intro" style="display:none; width: 400px;">
+<div class="modal-dialog-intro" style="display:block; width: 400px;">
     <div class="text-danger">
-        <i class="glyphicon glyphicon-ok-sign"></i>
+        <i class="glyphicon glyphicon-remove-sign"></i>
         <span>解冻申请已拒绝</span>
     </div>
 </div>
