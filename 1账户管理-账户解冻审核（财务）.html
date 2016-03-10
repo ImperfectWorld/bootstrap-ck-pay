@@ -155,10 +155,10 @@
                                 <input type="checkbox" value="">全选
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-info">
+                        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#modalAccept">
                             通过
                         </button>
-                        <button type="submit" class="btn btn-info">
+                        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#modalReject">
                             拒绝
                         </button>
                         <table class="table table-bordered table-hover" style="margin-top: 10px">
@@ -498,7 +498,8 @@
                 </h4>
             </div>
             <div class="modal-body text-left">
-                拒绝原因
+                拒绝原因(非必填项) <br/>
+                <input type="text"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">
