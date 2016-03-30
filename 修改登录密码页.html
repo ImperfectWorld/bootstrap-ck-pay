@@ -121,44 +121,44 @@
 
         <div class="col-md-10 main">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="center-block text-center" style="width: 560px;">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-3 control-label">原密码：</label>
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control">
-                                </div>
-                                <span class="text-danger col-sm-3 text-left"><i class="glyphicon glyphicon-star"></i>密码输入错误</span>
-                            </div>
-                            <div class="row" >
-                                <small class="col-sm-7 text-right col-sm-offset-2" style="color: #999;border-top: 1px dotted #999;padding-top: 16px">建议用英文字母（大小写区分）加数字或符号的混合密码</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-3 control-label">新密码：</label>
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control" placeholder="请输入六位及以上密码">
-                                </div>
-                                <span class="text-danger col-sm-3 text-left"><i class="glyphicon glyphicon-star"></i>密码格式输入错误</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-3 control-label">确认新密码：</label>
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control" placeholder="请输入六位及以上密码">
-                                </div>
-                                <span class="text-danger col-sm-3 text-left"><i class="glyphicon glyphicon-star"></i>密码输入错误</span>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <button type="submit" class="btn btn-block btn-success">确认修改</button>
-                                </div>
-                            </div>
-                        </form>
+            <style>
+                .vertical-center{position: absolute;top: 50%;left: 50%; margin: -111px 0 0 -280px;}
+                .star-small {position: relative; top: 2px;}
+            </style>
+            <div class="center-block vertical-center" style="width: 560px;">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">原密码：</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control">
+                        </div>
+                        <span class="text-danger col-sm-3 text-left"><i class="star-small">*</i> 密码输入错误</span>
                     </div>
-                </div>
+                    <div class="row" >
+                        <small class="col-sm-7 text-right col-sm-offset-2" style="color: #999;border-top: 1px dotted #999;padding-top: 16px">建议用英文字母（大小写区分）加数字或符号的混合密码</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">新密码：</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" placeholder="请输入六位及以上密码">
+                        </div>
+                        <span class="text-danger col-sm-3 text-left"><i class="star-small">*</i> 密码格式输入错误</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">确认新密码：</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" placeholder="请输入六位及以上密码">
+                        </div>
+                        <span class="text-danger col-sm-3 text-left"><i class="star-small">*</i> 密码输入错误</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            <button type="submit" class="btn btn-block btn-success">确认修改</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!-- /.row -->
+
 
         </div>
         <!-- /.main -->
@@ -176,7 +176,7 @@
 
 
 
-<div class="modal-dialog-intro" style="display:block; width: 400px;">
+<div class="modal-dialog-intro" style="display:none; width: 400px;">
     <div class="text-success">
         <i class="glyphicon glyphicon-ok-sign"></i>
         <span>登录密码已修改成功</span>
