@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>百度传课支付管理系统</title>
+    <link rel="shortcut icon" type="/image/x-icon" href="favicon.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="navbar-wrapper api-navbar-wrapper">
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> <a class="navbar-brand" href="javascript:;"> 百度传课-支付系统后台管理系统 </a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" style="padding-top:3px">
+                <ul class="nav nav-bar nav-pills navbar-right" style="margin-left: 50px;">
+                    <!--<li class=""><a href="#">登录</a></li>-->
+                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi，admin！ <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">修改登录密码</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="api-breadcrumb breadcrumb">当前位置：
+                <li><a href="#">首页</a></li> &gt;
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="nav-vertical mb20">
+                <ul class="accordion">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i>帐户管理 <i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">账户查询</a></li>
+                            <li><a href="#">账户冻结</a></li>
+                            <li><a href="#">账户冻结审核(部门)</a></li>
+                            <li><a href="#">账户解冻</a></li>
+                            <li><a href="#">账户解冻审核(部门)</a></li>
+                            <li><a href="#">账户解冻审核(财务)</a></li>
+                            <li><a href="#">重置支付密码</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-education"></i>交易查询 <i class="glyphicon glyphicon-menu-up"></i></a>
+                        <ul>
+                            <li><a href="#">充值记录</a></li>
+                            <li><a href="#">提现记录</a></li>
+                            <li><a href="#" class="active">退款记录</a></li>
+                            <li><a href="#">扣款记录</a></li>
+                            <li>
+                                <a href="#">交易流水<i class="glyphicon glyphicon-menu-up"></i></a>
+                                <ul>
+                                    <li><a href="#">机构收支明细</a></li>
+                                    <li><a href="#">对公帐户流水</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-usd"></i>提现管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务审核</a></li>
+                            <li><a href="#">财务受理</a></li>
+                            <li><a href="#">财务提交</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i>退款管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务待审核</a></li>
+                            <li><a href="#">业务已审核</a></li>
+                            <li><a href="#">财务待受理</a></li>
+                            <li><a href="#">财务已受理</a></li>
+                            <li><a href="#">待返回退款结果</a></li>
+                            <li><a href="#">已返回退款结果</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-option-vertical"></i>追溯管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-bold"></i>返还管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-retweet"></i>清结算管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i>后台用户管理</a></li>
+                    <li><a href="#" class="active"><i class="glyphicon glyphicon-list-alt"></i>操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.sidebar -->
+
+        <div class="col-md-10 main">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center-block text-center" style="width: 540px;">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label">原密码：</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control">
+                                </div>
+                                <span class="text-danger col-sm-3 text-left">密码输入错误</span>
+                            </div>
+                            <div class="row" >
+                                <small class="col-sm-9 text-right" style="color: #999;border-top: 1px dotted #999;padding-top: 16px">建议用英文字母（大小写区分）加数字或符号的混合密码</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label">新密码：</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" placeholder="请输入六位及以上密码">
+                                </div>
+                                <span class="text-danger col-sm-3 text-left">密码格式输入错误</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label">确认新密码：</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" placeholder="请输入六位及以上密码">
+                                </div>
+                                <span class="text-danger col-sm-3 text-left">密码输入错误</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <button type="submit" class="btn btn-block btn-success">确认修改</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.main -->
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="copyright fr">© 2015 百度传课 版权所有</div>
+        <div class="link"><a href="#">帮助中心</a> | <a href="#">使用统计</a></div>
+    </div>
+</div>
+
+
+
+<div class="modal-dialog-intro" style="display:block; width: 400px;">
+    <div class="text-success">
+        <i class="glyphicon glyphicon-ok-sign"></i>
+        <span>登录密码已修改成功</span>
+    </div>
+</div>
+
+</body>
+</html>
