@@ -3,4 +3,4 @@
 
 1.bootstrap框架
 <br/>
-2.管理员使用管理平台
+2.管理员使用管理平台# bootstrap-ck-pay
