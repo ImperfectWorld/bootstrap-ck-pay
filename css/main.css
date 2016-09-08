@@ -446,3 +446,22 @@ table {
     text-align: right;
     margin-right: 20px;
 }
+
+/*操作按钮不可点击状态*/
+.formcon-btn--unavailable {
+    color: #999;
+    cursor: default;
+}
+.formcon-btn--unavailable:hover {
+    color: #999;
+    cursor: default;
+    text-decoration: none;
+}
+/*表格上消息提示信息*/
+.infocon-text--money {
+    color: #ff8700;
+}
+.infocon-link--right {
+    position: relative;
+    left: 500px;
+}

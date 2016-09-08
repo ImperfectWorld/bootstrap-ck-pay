@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>百度传课支付管理系统</title>
+    <link rel="shortcut icon" type="/image/x-icon" href="favicon.ico" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="navbar-wrapper api-navbar-wrapper">
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"> <a class="navbar-brand" href="javascript:;"> 百度传课-支付系统后台管理系统 </a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" style="padding-top:3px">
+                <ul class="nav nav-bar nav-pills navbar-right" style="margin-left: 50px;">
+                    <!--<li class=""><a href="#">登录</a></li>-->
+                    <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Hi，admin！ <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人中心</a></li>
+                            <li><a href="#">返回平台首页</a></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="api-breadcrumb breadcrumb">当前位置：
+                <li><a href="#">首页</a></li> &gt;
+                <li><a href="#">ios结算</a></li> &gt;
+                <li><a href="#">结算记录</a></li> &gt;
+                <li class="active">查看详情</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+<!-- /breadcrumb -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="nav-vertical mb20">
+                <ul class="accordion">
+                    <li><a href="#"><i class="glyphicon glyphicon-user"></i>帐户管理</a></li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-education"></i>交易查询<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display: none;">
+                            <li><a href="#">充值记录</a></li>
+                            <li><a href="#">提现记录</a></li>
+                            <li><a href="#">退款记录</a></li>
+                            <li><a href="#">扣款记录</a></li>
+                            <li>
+                                <a href="#">交易流水<i class="glyphicon glyphicon-menu-up"></i></a>
+                                <ul>
+                                    <li><a href="#" class="active">机构收支明细</a></li>
+                                    <li><a href="#">对公帐户流水</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-usd"></i>提现管理<i class="glyphicon glyphicon-menu-down"></i></a>
+                        <ul style="display:none">
+                            <li><a href="#">业务审核</a></li>
+                            <li><a href="#">财务受理</a></li>
+                            <li><a href="#">财务提交</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i>退款管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-option-vertical"></i>追溯管理</a></li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-log-out"></i>iOS结算<i class="glyphicon glyphicon-menu-up"></i></a>
+                        <ul style="display:block">
+                            <li><a href="#">导入结算表</a></li>
+                            <li><a href="#">结算记录</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="glyphicon glyphicon-bold"></i>返还管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-retweet"></i>清结算管理</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-list"></i>后台用户管理</a></li>
+                    <li><a href="#" class="active"><i class="glyphicon glyphicon-list-alt"></i>操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.sidebar -->
+
+        <div class="col-md-10 main">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#">《返回</a>
+                    <!-- 带边框 -->
+                    <table class="table table-bordered table-hover">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>流水号</th>
+                            <th>用户Email</th>
+                            <th>订单创建时间</th>
+                            <th>订单金额（K币）</th>
+                            <th>确认付款时间</th>
+                            <th>确认付款金额（K币）</th>
+                            <th>K币结算金额（元）</th>
+                            <th style="width: 123px;">K币结算状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>91202901</td>
+                            <td>lilei@baidu.com</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>70</td>
+                            <td>已结算 <span>2015.12.10 18:30</span></td>
+                        </tr>
+                        <tr>
+                            <td>91202901</td>
+                            <td>lilei@baidu.com</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>70</td>
+                            <td>已结算 <span>2015.12.10 18:30</span></td>
+                        </tr>
+                        <tr>
+                            <td>91202901</td>
+                            <td>lilei@baidu.com</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>70</td>
+                            <td>已结算 <span>2015.12.10 18:30</span></td>
+                        </tr>
+                        <tr>
+                            <td>91202901</td>
+                            <td>lilei@baidu.com</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>70</td>
+                            <td>已结算 <span>2015.12.10 18:30</span></td>
+                        </tr>
+                        <tr>
+                            <td>91202901</td>
+                            <td>lilei@baidu.com</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>2015.12.10 18:30</td>
+                            <td>100</td>
+                            <td>70</td>
+                            <td>已结算 <span>2015.12.10 18:30</span></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.main -->
+    </div>
+
+
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="copyright fr">© 2015 百度传课 版权所有</div>
+        <div class="link"><a href="#">帮助中心</a> | <a href="#">使用统计</a></div>
+    </div>
+</div>
+
+<!-- 模态框（Modal）modalInfo -->
+<div class="modal fade bs-example-modal-md" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    提现详情
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-wrap">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="10%">流水号</th>
+                            <th width="11%">用户ID</th>
+                            <th width="">用户Email</th>
+                            <th width="11%">提现金额(元)</th>
+                            <th width="12%">提现手续费(元)</th>
+                            <th width="15%">提现申请时间</th>
+                            <th width="10%">帐户状态</th>
+                        </tr>
+                        <tr>
+                            <td>00000</td>
+                            <td>000000</td>
+                            <td>baidu0101@baidu.com</td>
+                            <td>100.00</td>
+                            <td>100.00</td>
+                            <td>2015-01-12</td>
+                            <td>正常</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="dialog-txxq-detail">
+                    <dl>
+                        <dt>收款人姓名</dt>
+                        <dd>百度</dd>
+                    </dl>
+                    <dl>
+                        <dt>收款银行</dt>
+                        <dd>招商银行</dd>
+                    </dl>
+                    <dl>
+                        <dt>开户地及支行</dt>
+                        <dd>北京, 招商银行</dd>
+                    </dl>
+                    <dl>
+                        <dt>收款帐号</dt>
+                        <dd>99w898993894838989</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="fl">
+                    <span class="mr20">
+                        <strong>业务审核人:</strong>
+                        <strong>王海光</strong>
+                    </span>
+                    <span class="mr20">
+                        <strong>财务受理人:</strong>
+                        <strong>王海光</strong>
+                    </span>
+                    <span>
+                        <strong>财务提交人:</strong>
+                        <strong>王海光</strong>
+                    </span>
+                </div>
+                <button type="button" class="btn btn-default" disabled>已成功</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+</html>
